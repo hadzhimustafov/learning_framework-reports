@@ -1,0 +1,1499 @@
+<testsuites id="" name="" tests="35" failures="24" skipped="6" errors="4" time="1660.259426">
+<testsuite name="accessibility.spec.ts" timestamp="2026-09-17T16:19:02.517Z" hostname="chromium" tests="6" failures="3" skipped="0" time="987.384" errors="3">
+<testcase name="keyboard navigation: Tab, Shift+Tab and Enter/Space activation" classname="accessibility.spec.ts" time="312.941">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-keyboard-nav-82d45--and-Enter-Space-activation-chromium/video.webm]]
+
+[[ATTACHMENT|videos/accessibility-keyboard-nav-82d45--and-Enter-Space-activation-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/accessibility-keyboard-nav-82d45--and-Enter-Space-activation-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="Test timeout of 300000ms exceeded." type="Error">
+<![CDATA[  [chromium] › accessibility.spec.ts:14:1 › keyboard navigation: Tab, Shift+Tab and Enter/Space activation 
+
+    Test timeout of 300000ms exceeded.
+
+    Error: locator.focus: Test timeout of 300000ms exceeded.
+    Call log:
+      - waiting for locator('article').filter({ hasText: 'Tech Course' }).first().getByRole('button', { name: /Start|Continue/ })
+
+
+      19 |     .first()
+      20 |     .getByRole('button', { name: /Start|Continue/ });
+    > 21 |   await firstAction.focus();
+         |                     ^
+      22 |   await expect(firstAction).toBeFocused();
+      23 |
+      24 |   // Shift+Tab moves focus backwards out of the button; Tab returns to it.
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/accessibility.spec.ts:21:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-keyboard-nav-82d45--and-Enter-Space-activation-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/accessibility-keyboard-nav-82d45--and-Enter-Space-activation-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-keyboard-nav-82d45--and-Enter-Space-activation-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/accessibility-keyboard-nav-82d45--and-Enter-Space-activation-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="modal traps focus and closes on Escape, restoring focus to the trigger" classname="accessibility.spec.ts" time="312.879">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-modal-traps--00b78-toring-focus-to-the-trigger-chromium/video.webm]]
+
+[[ATTACHMENT|videos/accessibility-modal-traps--00b78-toring-focus-to-the-trigger-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/accessibility-modal-traps--00b78-toring-focus-to-the-trigger-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="Test timeout of 300000ms exceeded." type="Error">
+<![CDATA[  [chromium] › accessibility.spec.ts:52:1 › modal traps focus and closes on Escape, restoring focus to the trigger 
+
+    Test timeout of 300000ms exceeded.
+
+    Error: locator.click: Test timeout of 300000ms exceeded.
+    Call log:
+      - waiting for locator('article').filter({ hasText: 'Modal Fixture' }).first().getByRole('button', { name: 'Start' })
+
+
+      57 |     .first()
+      58 |     .getByRole('button', { name: 'Start' });
+    > 59 |   await startButton.click();
+         |                     ^
+      60 |
+      61 |   const dialog = page.getByRole('dialog', { name: 'Grant Host Trust' });
+      62 |   await expect(dialog).toBeVisible({ timeout: 10_000 });
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/accessibility.spec.ts:59:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-modal-traps--00b78-toring-focus-to-the-trigger-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/accessibility-modal-traps--00b78-toring-focus-to-the-trigger-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-modal-traps--00b78-toring-focus-to-the-trigger-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/accessibility-modal-traps--00b78-toring-focus-to-the-trigger-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="ARIA live regions announce save status and evaluation progress" classname="accessibility.spec.ts" time="16.083">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-ARIA-live-re-8b342-tus-and-evaluation-progress-chromium/video.webm]]
+
+[[ATTACHMENT|videos/accessibility-ARIA-live-re-8b342-tus-and-evaluation-progress-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/accessibility-ARIA-live-re-8b342-tus-and-evaluation-progress-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › accessibility.spec.ts:90:1 › ARIA live regions announce save status and evaluation progress 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Tech Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Tech Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterTechCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:51:9)
+        at enterTechCoursePracticeWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:304:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/accessibility.spec.ts:96:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-ARIA-live-re-8b342-tus-and-evaluation-progress-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/accessibility-ARIA-live-re-8b342-tus-and-evaluation-progress-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-ARIA-live-re-8b342-tus-and-evaluation-progress-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/accessibility-ARIA-live-re-8b342-tus-and-evaluation-progress-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="axe-core: course library page has zero accessibility violations" classname="accessibility.spec.ts" time="16.115">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-axe-core-cou-fdf94-ro-accessibility-violations-chromium/video.webm]]
+
+[[ATTACHMENT|videos/accessibility-axe-core-cou-fdf94-ro-accessibility-violations-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/accessibility-axe-core-cou-fdf94-ro-accessibility-violations-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › accessibility.spec.ts:121:1 › axe-core: course library page has zero accessibility violations 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Tech Course')
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByText('Tech Course')
+
+
+      123 |
+      124 |   // Wait for the catalog to finish hydrating so the skeleton is not the audited surface.
+    > 125 |   await expect(page.getByText('Tech Course')).toBeVisible({ timeout: 15_000 });
+          |                                               ^
+      126 |
+      127 |   const results = await new AxeBuilder({ page }).analyze();
+      128 |   expect(results.violations).toEqual([]);
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/accessibility.spec.ts:125:47
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-axe-core-cou-fdf94-ro-accessibility-violations-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/accessibility-axe-core-cou-fdf94-ro-accessibility-violations-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-axe-core-cou-fdf94-ro-accessibility-violations-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/accessibility-axe-core-cou-fdf94-ro-accessibility-violations-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="axe-core: workspace page has zero accessibility violations" classname="accessibility.spec.ts" time="16.096">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-axe-core-wor-49036-ro-accessibility-violations-chromium/video.webm]]
+
+[[ATTACHMENT|videos/accessibility-axe-core-wor-49036-ro-accessibility-violations-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/accessibility-axe-core-wor-49036-ro-accessibility-violations-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › accessibility.spec.ts:131:1 › axe-core: workspace page has zero accessibility violations 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Tech Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Tech Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterTechCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:51:9)
+        at enterTechCoursePracticeWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:304:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/accessibility.spec.ts:133:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-axe-core-wor-49036-ro-accessibility-violations-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/accessibility-axe-core-wor-49036-ro-accessibility-violations-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-axe-core-wor-49036-ro-accessibility-violations-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/accessibility-axe-core-wor-49036-ro-accessibility-violations-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="axe-core: trust modal has zero accessibility violations" classname="accessibility.spec.ts" time="313.27">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-axe-core-tru-1c0d3-ro-accessibility-violations-chromium/video.webm]]
+
+[[ATTACHMENT|videos/accessibility-axe-core-tru-1c0d3-ro-accessibility-violations-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/accessibility-axe-core-tru-1c0d3-ro-accessibility-violations-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="Test timeout of 300000ms exceeded." type="Error">
+<![CDATA[  [chromium] › accessibility.spec.ts:141:1 › axe-core: trust modal has zero accessibility violations 
+
+    Test timeout of 300000ms exceeded.
+
+    Error: locator.click: Test timeout of 300000ms exceeded.
+    Call log:
+      - waiting for locator('article').filter({ hasText: 'Modal Fixture' }).first().getByRole('button', { name: 'Start' })
+
+
+      146 |     .first()
+      147 |     .getByRole('button', { name: 'Start' });
+    > 148 |   await startButton.click();
+          |                     ^
+      149 |
+      150 |   const dialog = page.getByRole('dialog', { name: 'Grant Host Trust' });
+      151 |   await expect(dialog).toBeVisible({ timeout: 10_000 });
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/accessibility.spec.ts:148:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-axe-core-tru-1c0d3-ro-accessibility-violations-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/accessibility-axe-core-tru-1c0d3-ro-accessibility-violations-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/accessibility-axe-core-tru-1c0d3-ro-accessibility-violations-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/accessibility-axe-core-tru-1c0d3-ro-accessibility-violations-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="course-generation-journey.spec.ts" timestamp="2026-09-17T16:19:02.517Z" hostname="chromium" tests="3" failures="1" skipped="2" time="32.036" errors="0">
+<testcase name="python: full Q2 journey from description to completed transfer" classname="course-generation-journey.spec.ts" time="32.036">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/course-generation-journey--03777-ption-to-completed-transfer-chromium/video.webm]]
+
+[[ATTACHMENT|videos/course-generation-journey--03777-ption-to-completed-transfer-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/course-generation-journey--03777-ption-to-completed-transfer-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › course-generation-journey.spec.ts:79:1 › python: full Q2 journey from description to completed transfer 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Создать курс' })
+    Expected: visible
+    Timeout: 30000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 30000ms
+      - waiting for getByRole('button', { name: 'Создать курс' })
+
+
+       at course-generation-support.ts:275
+
+      273 |   await gotoLearnerApp(page);
+      274 |   const create = page.getByRole('button', { name: 'Создать курс' });
+    > 275 |   await expect(create).toBeVisible({ timeout: 30_000 });
+          |                        ^
+      276 |   await create.click();
+      277 |   await expect(page.getByRole('heading', { name: 'Чему хотите научиться?' })).toBeVisible({
+      278 |     timeout: 30_000,
+        at openGenerator (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/course-generation-support.ts:275:24)
+        at driveToConfirmedPlan (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/course-generation-support.ts:351:3)
+        at driveCreation (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/course-generation-support.ts:338:17)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/course-generation-journey.spec.ts:86:17
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/course-generation-journey--03777-ption-to-completed-transfer-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/course-generation-journey--03777-ption-to-completed-transfer-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/course-generation-journey--03777-ption-to-completed-transfer-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/course-generation-journey--03777-ption-to-completed-transfer-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="finance: response-form journey with wrong values, conflict and completion" classname="course-generation-journey.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="management: keyboard-only creation and completion (A15/A17)" classname="course-generation-journey.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="course-generation-recovery.spec.ts" timestamp="2026-09-17T16:19:02.517Z" hostname="chromium" tests="5" failures="1" skipped="4" time="31.676" errors="0">
+<testcase name="capabilities read failure: library notice, wizard guidance, library intact" classname="course-generation-recovery.spec.ts" time="31.676">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/course-generation-recovery-96921-ard-guidance-library-intact-chromium/video.webm]]
+
+[[ATTACHMENT|videos/course-generation-recovery-96921-ard-guidance-library-intact-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/course-generation-recovery-96921-ard-guidance-library-intact-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › course-generation-recovery.spec.ts:102:1 › capabilities read failure: library notice, wizard guidance, library intact 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'AI для создания курсов пока не настроен' })
+    Expected: visible
+    Timeout: 30000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 30000ms
+      - waiting for getByRole('heading', { name: 'AI для создания курсов пока не настроен' })
+
+
+      110 |   await expect(
+      111 |     page.getByRole('heading', { name: 'AI для создания курсов пока не настроен' }),
+    > 112 |   ).toBeVisible({ timeout: 30_000 });
+          |     ^
+      113 |   // The library stays intact: existing courses and templates remain listed.
+      114 |   await expect(page.getByRole('button', { name: 'Создать курс' })).toBeVisible();
+      115 |
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/course-generation-recovery.spec.ts:112:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/course-generation-recovery-96921-ard-guidance-library-intact-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/course-generation-recovery-96921-ard-guidance-library-intact-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/course-generation-recovery-96921-ard-guidance-library-intact-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/course-generation-recovery-96921-ard-guidance-library-intact-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="provider transport failure mid-creation: interrupted guidance, resume, library intact" classname="course-generation-recovery.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="interrupted mid-flight: completed checkpoints are not regenerated" classname="course-generation-recovery.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="two tabs: stale plan is never materialized" classname="course-generation-recovery.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="failed publication: retry_publication republishes without regeneration" classname="course-generation-recovery.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="learner-journey.spec.ts" timestamp="2026-09-17T16:19:02.517Z" hostname="chromium" tests="2" failures="2" skipped="0" time="32.277" errors="0">
+<testcase name="select, learn theory, practice, check and advance a course" classname="learner-journey.spec.ts" time="16.144">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/learner-journey-select-lea-b6d13--check-and-advance-a-course-chromium/video.webm]]
+
+[[ATTACHMENT|videos/learner-journey-select-lea-b6d13--check-and-advance-a-course-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/learner-journey-select-lea-b6d13--check-and-advance-a-course-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › learner-journey.spec.ts:13:1 › select, learn theory, practice, check and advance a course 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Journey Course')
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByText('Journey Course')
+
+
+      15 |   // workspace, accepting the host-trust confirmation when required.
+      16 |   await gotoLearnerApp(page);
+    > 17 |   await expect(page.getByText('Journey Course')).toBeVisible({ timeout: 15_000 });
+         |                                                  ^
+      18 |   await enterJourneyCourseWorkspace(page);
+      19 |
+      20 |   // Step 2: the theory unit renders its reading content and the interactive quiz on its own tab.
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/learner-journey.spec.ts:17:50
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/learner-journey-select-lea-b6d13--check-and-advance-a-course-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/learner-journey-select-lea-b6d13--check-and-advance-a-course-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/learner-journey-select-lea-b6d13--check-and-advance-a-course-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/learner-journey-select-lea-b6d13--check-and-advance-a-course-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="mixed unit serves theory, quiz and code tabs in one workspace" classname="learner-journey.spec.ts" time="16.133">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/learner-journey-mixed-unit-5c837--code-tabs-in-one-workspace-chromium/video.webm]]
+
+[[ATTACHMENT|videos/learner-journey-mixed-unit-5c837--code-tabs-in-one-workspace-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/learner-journey-mixed-unit-5c837--code-tabs-in-one-workspace-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › learner-journey.spec.ts:81:1 › mixed unit serves theory, quiz and code tabs in one workspace 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mixed Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mixed Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/learner-journey.spec.ts:83:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/learner-journey-mixed-unit-5c837--code-tabs-in-one-workspace-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/learner-journey-mixed-unit-5c837--code-tabs-in-one-workspace-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/learner-journey-mixed-unit-5c837--code-tabs-in-one-workspace-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/learner-journey-mixed-unit-5c837--code-tabs-in-one-workspace-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="mentor.spec.ts" timestamp="2026-09-17T16:19:02.517Z" hostname="chromium" tests="14" failures="14" skipped="0" time="225.813" errors="0">
+<testcase name="new unit selects Rubric and keeps Mentor descendants hidden" classname="mentor.spec.ts" time="16.144">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-new-unit-selects-Ru-6aba9-s-Mentor-descendants-hidden-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-new-unit-selects-Ru-6aba9-s-Mentor-descendants-hidden-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-new-unit-selects-Ru-6aba9-s-Mentor-descendants-hidden-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:18:1 › new unit selects Rubric and keeps Mentor descendants hidden ───
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:61:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:20:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-new-unit-selects-Ru-6aba9-s-Mentor-descendants-hidden-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-new-unit-selects-Ru-6aba9-s-Mentor-descendants-hidden-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-new-unit-selects-Ru-6aba9-s-Mentor-descendants-hidden-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-new-unit-selects-Ru-6aba9-s-Mentor-descendants-hidden-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Mentor tab shows History, New chat, context chips and composer" classname="mentor.spec.ts" time="16.173">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-Mentor-tab-shows-Hi-5ac6a--context-chips-and-composer-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-Mentor-tab-shows-Hi-5ac6a--context-chips-and-composer-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-Mentor-tab-shows-Hi-5ac6a--context-chips-and-composer-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:30:1 › Mentor tab shows History, New chat, context chips and composer 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:61:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:32:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-Mentor-tab-shows-Hi-5ac6a--context-chips-and-composer-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-Mentor-tab-shows-Hi-5ac6a--context-chips-and-composer-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-Mentor-tab-shows-Hi-5ac6a--context-chips-and-composer-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-Mentor-tab-shows-Hi-5ac6a--context-chips-and-composer-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="New chat persists a durable thread that History can restore after reload" classname="mentor.spec.ts" time="16.143">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-New-chat-persists-a-85405-ry-can-restore-after-reload-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-New-chat-persists-a-85405-ry-can-restore-after-reload-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-New-chat-persists-a-85405-ry-can-restore-after-reload-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:49:1 › New chat persists a durable thread that History can restore after reload 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:61:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:53:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-New-chat-persists-a-85405-ry-can-restore-after-reload-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-New-chat-persists-a-85405-ry-can-restore-after-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-New-chat-persists-a-85405-ry-can-restore-after-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-New-chat-persists-a-85405-ry-can-restore-after-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="context chips follow the workspace Theory, Quiz and Practice tabs" classname="mentor.spec.ts" time="16.124">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-context-chips-follo-2e3a9-eory-Quiz-and-Practice-tabs-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-context-chips-follo-2e3a9-eory-Quiz-and-Practice-tabs-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-context-chips-follo-2e3a9-eory-Quiz-and-Practice-tabs-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:77:1 › context chips follow the workspace Theory, Quiz and Practice tabs 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Mixed Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Mixed Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorMixedCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:66:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:79:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-context-chips-follo-2e3a9-eory-Quiz-and-Practice-tabs-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-context-chips-follo-2e3a9-eory-Quiz-and-Practice-tabs-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-context-chips-follo-2e3a9-eory-Quiz-and-Practice-tabs-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-context-chips-follo-2e3a9-eory-Quiz-and-Practice-tabs-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="cold transfer keeps Rubric selected and removes Mentor affordances" classname="mentor.spec.ts" time="16.136">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-cold-transfer-keeps-18520--removes-Mentor-affordances-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-cold-transfer-keeps-18520--removes-Mentor-affordances-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-cold-transfer-keeps-18520--removes-Mentor-affordances-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:91:1 › cold transfer keeps Rubric selected and removes Mentor affordances 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Cold Transfer Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Cold Transfer Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterColdTransferWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:76:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:93:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-cold-transfer-keeps-18520--removes-Mentor-affordances-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-cold-transfer-keeps-18520--removes-Mentor-affordances-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-cold-transfer-keeps-18520--removes-Mentor-affordances-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-cold-transfer-keeps-18520--removes-Mentor-affordances-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="pending human review suppresses Check and Next while Mentor stays available" classname="mentor.spec.ts" time="16.156">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-pending-human-revie-75fd2-hile-Mentor-stays-available-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-pending-human-revie-75fd2-hile-Mentor-stays-available-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-pending-human-revie-75fd2-hile-Mentor-stays-available-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:105:1 › pending human review suppresses Check and Next while Mentor stays available 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Review Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Review Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterReviewCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:71:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:110:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-pending-human-revie-75fd2-hile-Mentor-stays-available-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-pending-human-revie-75fd2-hile-Mentor-stays-available-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-pending-human-revie-75fd2-hile-Mentor-stays-available-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-pending-human-revie-75fd2-hile-Mentor-stays-available-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="axe-core: Mentor tab and History dialog have zero accessibility violations" classname="mentor.spec.ts" time="16.115">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:127:1 › axe-core: Mentor tab and History dialog have zero accessibility violations 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:61:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:131:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="compact viewport keeps exactly three global choices and 44px Support targets" classname="mentor.spec.ts" time="16.138">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-compact-viewport-ke-aa68b-es-and-44px-Support-targets-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-compact-viewport-ke-aa68b-es-and-44px-Support-targets-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-compact-viewport-ke-aa68b-es-and-44px-Support-targets-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:144:1 › compact viewport keeps exactly three global choices and 44px Support targets 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Tech Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Tech Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:149:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-compact-viewport-ke-aa68b-es-and-44px-Support-targets-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-compact-viewport-ke-aa68b-es-and-44px-Support-targets-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-compact-viewport-ke-aa68b-es-and-44px-Support-targets-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-compact-viewport-ke-aa68b-es-and-44px-Support-targets-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="narrow viewport History is a labelled drawer that closes on Escape" classname="mentor.spec.ts" time="16.036">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-narrow-viewport-His-d77e0-rawer-that-closes-on-Escape-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-narrow-viewport-His-d77e0-rawer-that-closes-on-Escape-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-narrow-viewport-His-d77e0-rawer-that-closes-on-Escape-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:163:1 › narrow viewport History is a labelled drawer that closes on Escape 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Tech Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Tech Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:166:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-narrow-viewport-His-d77e0-rawer-that-closes-on-Escape-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-narrow-viewport-His-d77e0-rawer-that-closes-on-Escape-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-narrow-viewport-His-d77e0-rawer-that-closes-on-Escape-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-narrow-viewport-His-d77e0-rawer-that-closes-on-Escape-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="send posts the help turn, streams the fake provider reply and marks it Saved" classname="mentor.spec.ts" time="16.173">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-send-posts-the-help-06395-er-reply-and-marks-it-Saved-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-send-posts-the-help-06395-er-reply-and-marks-it-Saved-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-send-posts-the-help-06395-er-reply-and-marks-it-Saved-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:182:1 › send posts the help turn, streams the fake provider reply and marks it Saved 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:61:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:187:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-send-posts-the-help-06395-er-reply-and-marks-it-Saved-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-send-posts-the-help-06395-er-reply-and-marks-it-Saved-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-send-posts-the-help-06395-er-reply-and-marks-it-Saved-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-send-posts-the-help-06395-er-reply-and-marks-it-Saved-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="New chat double activation creates at most one additional thread" classname="mentor.spec.ts" time="16.128">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-New-chat-double-act-4495d--most-one-additional-thread-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-New-chat-double-act-4495d--most-one-additional-thread-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-New-chat-double-act-4495d--most-one-additional-thread-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:200:1 › New chat double activation creates at most one additional thread 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:61:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:202:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-New-chat-double-act-4495d--most-one-additional-thread-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-New-chat-double-act-4495d--most-one-additional-thread-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-New-chat-double-act-4495d--most-one-additional-thread-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-New-chat-double-act-4495d--most-one-additional-thread-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="practice answer turns stale after the workspace revision changes and a reload" classname="mentor.spec.ts" time="16.131">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-practice-answer-tur-09d49-vision-changes-and-a-reload-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-practice-answer-tur-09d49-vision-changes-and-a-reload-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-practice-answer-tur-09d49-vision-changes-and-a-reload-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:261:1 › practice answer turns stale after the workspace revision changes and a reload 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:61:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:266:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-practice-answer-tur-09d49-vision-changes-and-a-reload-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-practice-answer-tur-09d49-vision-changes-and-a-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-practice-answer-tur-09d49-vision-changes-and-a-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-practice-answer-tur-09d49-vision-changes-and-a-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="provider failure keeps the composer usable and a later send can succeed" classname="mentor.spec.ts" time="16.101">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-provider-failure-ke-7877a-nd-a-later-send-can-succeed-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-provider-failure-ke-7877a-nd-a-later-send-can-succeed-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-provider-failure-ke-7877a-nd-a-later-send-can-succeed-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:306:1 › provider failure keeps the composer usable and a later send can succeed 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:61:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:311:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-provider-failure-ke-7877a-nd-a-later-send-can-succeed-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-provider-failure-ke-7877a-nd-a-later-send-can-succeed-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-provider-failure-ke-7877a-nd-a-later-send-can-succeed-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-provider-failure-ke-7877a-nd-a-later-send-can-succeed-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="reload keeps the in-flight help operation identity for reconnect" classname="mentor.spec.ts" time="16.115">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-reload-keeps-the-in-f0dd3-tion-identity-for-reconnect-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-reload-keeps-the-in-f0dd3-tion-identity-for-reconnect-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/mentor-reload-keeps-the-in-f0dd3-tion-identity-for-reconnect-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › mentor.spec.ts:329:1 › reload keeps the in-flight help operation identity for reconnect 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Mentor Course', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Mentor Course', exact: true })
+
+
+       at support.ts:38
+
+      36 |  */
+      37 | export async function enterCourseWorkspace(page: Page, courseTitle: string): Promise<void> {
+    > 38 |   await expect(page.getByRole('heading', { name: courseTitle, exact: true })).toBeVisible({
+         |                                                                               ^
+      39 |     timeout: 15_000,
+      40 |   });
+      41 |   const card = page.locator('article').filter({
+        at enterCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:38:79)
+        at enterMentorCourseWorkspace (/home/runner/work/learning_framework/learning_framework/web/learner/e2e/support.ts:61:9)
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/mentor.spec.ts:332:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-reload-keeps-the-in-f0dd3-tion-identity-for-reconnect-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/mentor-reload-keeps-the-in-f0dd3-tion-identity-for-reconnect-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/mentor-reload-keeps-the-in-f0dd3-tion-identity-for-reconnect-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/mentor-reload-keeps-the-in-f0dd3-tion-identity-for-reconnect-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="responsive-matrix.spec.ts" timestamp="2026-09-17T16:19:02.517Z" hostname="chromium" tests="4" failures="3" skipped="0" time="326.142" errors="1">
+<testcase name="wide viewport (1440x900) › library and workspace fit without overflow and keep 44px targets" classname="responsive-matrix.spec.ts" time="5.856">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/responsive-matrix-wide-vie-864bc-rflow-and-keep-44px-targets-chromium/video.webm]]
+
+[[ATTACHMENT|videos/responsive-matrix-wide-vie-864bc-rflow-and-keep-44px-targets-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/responsive-matrix-wide-vie-864bc-rflow-and-keep-44px-targets-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › responsive-matrix.spec.ts:19:5 › wide viewport (1440x900) › library and workspace fit without overflow and keep 44px targets 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Ваше обучение' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Ваше обучение' })
+
+
+      22 |       await expect(
+      23 |         page.getByRole('heading', { name: 'Ваше обучение' }),
+    > 24 |       ).toBeVisible();
+         |         ^
+      25 |       // Catalog listing shares the server with earlier suites (generation shelf + mentor jobs).
+      26 |       // enterCourseWorkspace already waits 15s; the default 5s locator timeout loses the race
+      27 |       // while "Loading course catalog" is still on screen.
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/responsive-matrix.spec.ts:24:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/responsive-matrix-wide-vie-864bc-rflow-and-keep-44px-targets-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/responsive-matrix-wide-vie-864bc-rflow-and-keep-44px-targets-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/responsive-matrix-wide-vie-864bc-rflow-and-keep-44px-targets-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/responsive-matrix-wide-vie-864bc-rflow-and-keep-44px-targets-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="compact viewport (1024x768) › library and workspace fit without overflow and keep 44px targets" classname="responsive-matrix.spec.ts" time="5.934">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/responsive-matrix-compact--3dcbe-rflow-and-keep-44px-targets-chromium/video.webm]]
+
+[[ATTACHMENT|videos/responsive-matrix-compact--3dcbe-rflow-and-keep-44px-targets-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/responsive-matrix-compact--3dcbe-rflow-and-keep-44px-targets-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › responsive-matrix.spec.ts:19:5 › compact viewport (1024x768) › library and workspace fit without overflow and keep 44px targets 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Ваше обучение' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Ваше обучение' })
+
+
+      22 |       await expect(
+      23 |         page.getByRole('heading', { name: 'Ваше обучение' }),
+    > 24 |       ).toBeVisible();
+         |         ^
+      25 |       // Catalog listing shares the server with earlier suites (generation shelf + mentor jobs).
+      26 |       // enterCourseWorkspace already waits 15s; the default 5s locator timeout loses the race
+      27 |       // while "Loading course catalog" is still on screen.
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/responsive-matrix.spec.ts:24:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/responsive-matrix-compact--3dcbe-rflow-and-keep-44px-targets-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/responsive-matrix-compact--3dcbe-rflow-and-keep-44px-targets-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/responsive-matrix-compact--3dcbe-rflow-and-keep-44px-targets-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/responsive-matrix-compact--3dcbe-rflow-and-keep-44px-targets-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="narrow viewport (375x667) › library and workspace fit without overflow and keep 44px targets" classname="responsive-matrix.spec.ts" time="5.737">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/responsive-matrix-narrow-v-8b822-rflow-and-keep-44px-targets-chromium/video.webm]]
+
+[[ATTACHMENT|videos/responsive-matrix-narrow-v-8b822-rflow-and-keep-44px-targets-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/responsive-matrix-narrow-v-8b822-rflow-and-keep-44px-targets-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › responsive-matrix.spec.ts:19:5 › narrow viewport (375x667) › library and workspace fit without overflow and keep 44px targets 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Ваше обучение' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Ваше обучение' })
+
+
+      22 |       await expect(
+      23 |         page.getByRole('heading', { name: 'Ваше обучение' }),
+    > 24 |       ).toBeVisible();
+         |         ^
+      25 |       // Catalog listing shares the server with earlier suites (generation shelf + mentor jobs).
+      26 |       // enterCourseWorkspace already waits 15s; the default 5s locator timeout loses the race
+      27 |       // while "Loading course catalog" is still on screen.
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/responsive-matrix.spec.ts:24:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/responsive-matrix-narrow-v-8b822-rflow-and-keep-44px-targets-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/responsive-matrix-narrow-v-8b822-rflow-and-keep-44px-targets-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/responsive-matrix-narrow-v-8b822-rflow-and-keep-44px-targets-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/responsive-matrix-narrow-v-8b822-rflow-and-keep-44px-targets-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="narrow viewport: trust modal fits within screen bounds and dismisses on Escape" classname="responsive-matrix.spec.ts" time="308.615">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/responsive-matrix-narrow-v-b7bda-nds-and-dismisses-on-Escape-chromium/video.webm]]
+
+[[ATTACHMENT|videos/responsive-matrix-narrow-v-b7bda-nds-and-dismisses-on-Escape-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/responsive-matrix-narrow-v-b7bda-nds-and-dismisses-on-Escape-chromium/trace.zip]]
+]]>
+</system-out>
+<error message="Test timeout of 300000ms exceeded." type="Error">
+<![CDATA[  [chromium] › responsive-matrix.spec.ts:64:1 › narrow viewport: trust modal fits within screen bounds and dismisses on Escape 
+
+    Test timeout of 300000ms exceeded.
+
+    Error: locator.click: Test timeout of 300000ms exceeded.
+    Call log:
+      - waiting for locator('article').filter({ hasText: 'Modal Fixture' }).first().getByRole('button', { name: 'Start' })
+
+
+      72 |     .first()
+      73 |     .getByRole('button', { name: 'Start' });
+    > 74 |   await startButton.click();
+         |                     ^
+      75 |
+      76 |   const dialog = page.getByRole('dialog', { name: 'Grant Host Trust' });
+      77 |   await expect(dialog).toBeVisible({ timeout: 10_000 });
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/responsive-matrix.spec.ts:74:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/responsive-matrix-narrow-v-b7bda-nds-and-dismisses-on-Escape-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/responsive-matrix-narrow-v-b7bda-nds-and-dismisses-on-Escape-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/responsive-matrix-narrow-v-b7bda-nds-and-dismisses-on-Escape-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/responsive-matrix-narrow-v-b7bda-nds-and-dismisses-on-Escape-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.ts" timestamp="2026-09-17T16:19:02.517Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.665" errors="0">
+<testcase name="renders the learner SPA shell at /app/" classname="smoke.spec.ts" time="0.665">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/smoke-renders-the-learner-SPA-shell-at-app--chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
