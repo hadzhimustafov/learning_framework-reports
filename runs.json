@@ -1,6 +1,48 @@
 {
-  "updated_at": "2026-09-17T08:55:44Z",
+  "updated_at": "2026-09-17T09:18:40Z",
   "runs": [
+    {
+      "id": "35203507094",
+      "created_at": "2026-09-17T09:18:40Z",
+      "event": "pull_request",
+      "ref": "fix/e2e-responsive-catalog-wait",
+      "sha": "2cbe017b1d47ad96506b3243df4703650566d85a",
+      "url": "./Run/35203507094/",
+      "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/35203507094",
+      "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/18",
+      "pr_number": "18",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": "checks",
+          "name": "Checks",
+          "conclusion": "success",
+          "url": "./Run/35203507094/checks/",
+          "has_report": true
+        },
+        {
+          "id": "frontend",
+          "name": "Frontend",
+          "conclusion": "success",
+          "url": "./Run/35203507094/frontend/",
+          "has_report": true
+        },
+        {
+          "id": "assets",
+          "name": "Assets",
+          "conclusion": "success",
+          "url": "./Run/35203507094/assets/",
+          "has_report": true
+        },
+        {
+          "id": "e2e",
+          "name": "E2E",
+          "conclusion": "success",
+          "url": "./Run/35203507094/e2e/",
+          "has_report": true
+        }
+      ]
+    },
     {
       "id": "35201491274",
       "created_at": "2026-09-17T08:55:44Z",
