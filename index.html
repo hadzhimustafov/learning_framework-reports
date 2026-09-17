@@ -6,22 +6,76 @@
   <title>Learning Framework · Reports</title>
   <meta name="description" content="Навигационный центр отчётов Learning Framework">
   <link rel="stylesheet" href="./reports-shell.css">
+  <style>
+    .report-list { display: grid; gap: 12px; }
+    .report-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 18px 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+    .report-row h3 { margin: 0 0 6px; font-size: 1.05rem; }
+    .report-row p { margin: 0; color: var(--muted); font-size: .82rem; }
+    .report-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+    .report-links a { padding: 8px 11px; border: 1px solid var(--line); border-radius: 10px; color: var(--cyan); font-size: .78rem; }
+    .report-links a:hover { background: #72e6ff12; border-color: #72e6ff66; }
+    .empty { color: var(--muted); padding: 20px; border: 1px dashed var(--line); border-radius: 16px; }
+    @media (max-width: 620px) { .report-row { grid-template-columns: 1fr; } .report-links { justify-content: flex-start; } }
+  </style>
 </head>
 <body id="home">
   <div class="shell">
     <nav class="nav" aria-label="Основная навигация">
       <a class="brand" href="#home" aria-label="На главную"><span class="mark"></span><span>Learning Framework</span></a>
-      <div class="links"><a class="link home" href="#home">⌂ Home</a><a class="link" href="./e2e/pr-18/">Последний запуск</a><a class="link" href="#reports">Все материалы</a><span class="status"><i></i> Pages online</span></div>
+      <div class="links">
+        <a class="link home" href="#home">⌂ Home</a>
+        <a class="link" href="#latest">Последний запуск</a>
+        <a class="link" href="#reports">Все материалы</a>
+      </div>
     </nav>
+
     <main>
-      <section class="hero"><div class="grid"><div><div class="kicker">Quality cockpit · live evidence</div><h1><span class="gradient">Reports</span><br>that tell<br>the story.</h1><p class="lead">Единая точка входа в результаты тестов, trace-файлы и артефакты Learning Framework. Навигация остаётся рядом, а последний запуск открывается одним кликом.</p><div class="actions"><a class="button primary" href="./e2e/pr-18/">Открыть последний запуск <span>↗</span></a><a class="button ghost" href="https://github.com/hadzhimustafov/learning_framework-reports" target="_blank" rel="noreferrer">Репозиторий <span>↗</span></a></div></div>
-        <aside class="launch" id="latest"><div class="launch-top"><div><div class="label">Последний запуск</div><div class="run"><span>PR-18</span> / e2e</div></div><div class="date">17 Sep 2026</div></div><div class="divider"></div><div class="launch-list"><a class="launch-link" href="./e2e/pr-18/"><span><strong>Playwright report</strong><small>Результаты и детали тестов</small></span><span class="arrow">→</span></a><a class="launch-link" href="./e2e/pr-18/trace/"><span><strong>Trace viewer</strong><small>Пошаговая отладка браузера</small></span><span class="arrow">→</span></a><a class="launch-link" href="https://github.com/hadzhimustafov/learning_framework-reports/commit/8f26a2f9f93afcfb8055486211f4870dfdaeb3bf" target="_blank" rel="noreferrer"><span><strong>Deployment commit</strong><small>8f26a2f · исходный snapshot</small></span><span class="arrow">↗</span></a></div></aside>
-      </div></section>
-      <section id="reports"><div class="head"><h2>Навигация по запуску</h2><p>Выберите нужный слой доказательств</p></div><div class="cards"><a class="card" href="./e2e/pr-18/"><div class="icon">◈</div><h3>Test report</h3><p>HTML-отчёт Playwright: тесты, статусы, ошибки, snapshots и контекст сценариев.</p><div class="card-foot">Смотреть отчёт →</div></a><a class="card" href="./e2e/pr-18/trace/"><div class="icon">⌁</div><h3>Trace viewer</h3><p>Интерактивная история выполнения: действия, network, console, DOM и снимки.</p><div class="card-foot">Открыть trace →</div></a><a class="card" href="https://github.com/hadzhimustafov/learning_framework-reports/tree/gh-pages/e2e/pr-18" target="_blank" rel="noreferrer"><div class="icon">⌘</div><h3>Artifacts</h3><p>Все опубликованные материалы последнего запуска в ветке GitHub Pages.</p><div class="card-foot">Перейти к файлам ↗</div></a></div></section>
-      <section class="summary"><div class="metric"><strong>PR-18</strong><span>Последний опубликованный запуск</span></div><div class="metric"><strong>gh-pages</strong><span>Источник этой страницы</span></div><div class="metric"><strong>Online</strong><span>GitHub Pages deployment</span></div></section>
+      <section class="hero">
+        <div class="grid">
+          <div>
+            <div class="kicker">Quality cockpit · live evidence</div>
+            <h1><span class="gradient">Reports</span><br>that tell<br>the story.</h1>
+            <p class="lead">Все результаты автоматизированных проверок в одном месте. Откройте полный отчёт, trace или исходные артефакты нужного запуска.</p>
+            <div class="actions"><a class="button primary" href="#reports">Все материалы <span>↓</span></a><a class="button ghost" href="https://github.com/hadzhimustafov/learning_framework-reports" target="_blank" rel="noreferrer">Репозиторий ↗</a></div>
+          </div>
+          <aside class="launch" id="latest" aria-live="polite">
+            <div class="launch-top"><div><div class="label">Последний запуск</div><div class="run" id="latest-title">Загрузка…</div></div><div class="date" id="latest-date">—</div></div>
+            <div class="divider"></div>
+            <div class="launch-list" id="latest-links"><span class="empty">Список запусков загружается…</span></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="reports">
+        <div class="head"><div><h2>Все отчёты</h2><p>История опубликованных запусков</p></div><p id="report-count">Загрузка…</p></div>
+        <div class="report-list" id="report-list"><div class="empty">Загрузка списка отчётов…</div></div>
+      </section>
+
+      <section class="summary"><div class="metric"><strong id="metric-count">—</strong><span>Опубликованных запусков</span></div><div class="metric"><strong>gh-pages</strong><span>Канал публикации</span></div><div class="metric"><strong>Playwright</strong><span>Формат отчётов</span></div></section>
     </main>
     <footer><span>Learning Framework Reports · evidence made easy</span><span>Нажмите <kbd>Home</kbd>, чтобы вернуться наверх</span></footer>
   </div>
-  <script>document.addEventListener('keydown',e=>{if(e.key.toLowerCase()==='home'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();location.hash='home'}})</script>
+  <script>
+    const owner = 'hadzhimustafov';
+    const repo = 'learning_framework-reports';
+    const fallback = [{ name: 'pr-18', path: 'e2e/pr-18' }];
+    const api = `https://api.github.com/repos/${owner}/${repo}/contents/e2e?ref=gh-pages`;
+    const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const sortReports = reports => reports.filter(item => /^pr-[^/]+$/i.test(item.name)).sort((a, b) => b.name.localeCompare(a.name, undefined, { numeric: true }));
+    function render(reports) {
+      reports = sortReports(reports);
+      const list = document.querySelector('#report-list');
+      document.querySelector('#report-count').textContent = `${reports.length} запуск${reports.length === 1 ? '' : reports.length < 5 ? 'а' : 'ов'}`;
+      document.querySelector('#metric-count').textContent = reports.length;
+      if (!reports.length) { list.innerHTML = '<div class="empty">Опубликованных запусков пока нет.</div>'; return; }
+      const latest = reports[0];
+      document.querySelector('#latest-title').innerHTML = `<span>${esc(latest.name.toUpperCase())}</span> / e2e`;
+      document.querySelector('#latest-date').textContent = 'актуальный';
+      document.querySelector('#latest-links').innerHTML = `<a class="launch-link" href="./${latest.path}/playwright.html"><span><strong>Playwright Report</strong><small>Основной отчёт</small></span><span class="arrow">→</span></a><a class="launch-link" href="./${latest.path}/trace/"><span><strong>Trace Viewer</strong><small>Пошаговая диагностика</small></span><span class="arrow">→</span></a>`;
+      list.innerHTML = reports.map(report => { const base = `./${report.path}`; return `<article class="report-row"><div><h3>${esc(report.name.toUpperCase())} / e2e</h3><p>Опубликованный Playwright-запуск</p></div><div class="report-links"><a href="${base}/playwright.html">Отчёт</a><a href="${base}/trace/">Trace</a><a href="${base}/" aria-label="Открыть ${esc(report.name)}">Открыть →</a></div></article>`; }).join('');
+    }
+    fetch(api).then(response => { if (!response.ok) throw new Error('GitHub API unavailable'); return response.json(); }).then(render).catch(() => render(fallback));
+    document.addEventListener('keydown', event => { if (event.key.toLowerCase() === 'home' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) { event.preventDefault(); location.hash = 'home'; } });
+  </script>
 </body>
 </html>
