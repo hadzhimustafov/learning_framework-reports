@@ -10,6 +10,7 @@
   --cyan: #72e6ff;
   --violet: #a78bfa;
   --green: #55e6ad;
+  --rose: #ff8aa8;
   --shadow: 0 24px 80px #0006;
 }
 
@@ -153,6 +154,92 @@ a {
   border-radius: 50%;
   background: var(--green);
   box-shadow: 0 0 12px var(--green);
+}
+
+.status-fail {
+  color: var(--rose);
+  background: #ff8aa814;
+  border-color: #ff8aa833;
+}
+
+.status-fail i {
+  background: var(--rose);
+  box-shadow: 0 0 12px var(--rose);
+}
+
+.status-skip {
+  color: var(--muted);
+  background: #ffffff0a;
+  border-color: var(--line);
+}
+
+.status-skip i {
+  background: var(--muted);
+  box-shadow: none;
+}
+
+.job-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.page-body {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-body .hero {
+  padding: 36px 0 18px;
+}
+
+.page-body h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 8px;
+  font-size: 0.88rem;
+}
+
+table.data th,
+table.data td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+table.data th {
+  color: var(--muted);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fail-text {
+  color: var(--rose);
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+}
+
+.runs-list {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 28px;
 }
 
 .hero {
@@ -370,7 +457,7 @@ h1 {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 17px;
 }
 
