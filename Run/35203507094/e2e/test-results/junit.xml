@@ -1,0 +1,276 @@
+<testsuites id="" name="" tests="35" failures="0" skipped="0" errors="0" time="511.20252999999997">
+<testsuite name="accessibility.spec.ts" timestamp="2026-09-17T09:09:52.297Z" hostname="chromium" tests="6" failures="0" skipped="0" time="61.103" errors="0">
+<testcase name="keyboard navigation: Tab, Shift+Tab and Enter/Space activation" classname="accessibility.spec.ts" time="14.243">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-keyboard-nav-82d45--and-Enter-Space-activation-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="modal traps focus and closes on Escape, restoring focus to the trigger" classname="accessibility.spec.ts" time="3.041">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-modal-traps--00b78-toring-focus-to-the-trigger-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ARIA live regions announce save status and evaluation progress" classname="accessibility.spec.ts" time="19.561">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-ARIA-live-re-8b342-tus-and-evaluation-progress-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="axe-core: course library page has zero accessibility violations" classname="accessibility.spec.ts" time="2.917">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-axe-core-cou-fdf94-ro-accessibility-violations-chromium/video-1.webm]]
+
+[[ATTACHMENT|videos/accessibility-axe-core-cou-fdf94-ro-accessibility-violations-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="axe-core: workspace page has zero accessibility violations" classname="accessibility.spec.ts" time="18.043">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-axe-core-wor-49036-ro-accessibility-violations-chromium/video-1.webm]]
+
+[[ATTACHMENT|videos/accessibility-axe-core-wor-49036-ro-accessibility-violations-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="axe-core: trust modal has zero accessibility violations" classname="accessibility.spec.ts" time="3.298">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/accessibility-axe-core-tru-1c0d3-ro-accessibility-violations-chromium/video.webm]]
+
+[[ATTACHMENT|videos/accessibility-axe-core-tru-1c0d3-ro-accessibility-violations-chromium/video-1.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="course-generation-journey.spec.ts" timestamp="2026-09-17T09:09:52.297Z" hostname="chromium" tests="3" failures="0" skipped="0" time="99.564" errors="0">
+<testcase name="python: full Q2 journey from description to completed transfer" classname="course-generation-journey.spec.ts" time="42.504">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/course-generation-journey--03777-ption-to-completed-transfer-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="finance: response-form journey with wrong values, conflict and completion" classname="course-generation-journey.spec.ts" time="28.205">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/course-generation-journey--00c97-ues-conflict-and-completion-chromium/video.webm]]
+
+[[ATTACHMENT|videos/course-generation-journey--00c97-ues-conflict-and-completion-chromium/video-1.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="management: keyboard-only creation and completion (A15/A17)" classname="course-generation-journey.spec.ts" time="28.855">
+<system-out>
+<![CDATA[FAKE-CALLS [{"kind":"extract_interview","operation_id":"a70e639e-7687-4a3f-86b5-a5bc0a89bc18","unit_id":"","at":1789636297.8235576},{"kind":"propose_learning_map","operation_id":"b97e89a2-e47e-44b5-82cd-45eda08a7739","unit_id":"","at":1789636300.651237},{"kind":"materialize_unit","operation_id":"d7b0f836-8a83-4105-9923-34be53c0af9e","unit_id":"u1","at":1789636303.5112643},{"kind":"materialize_unit","operation_id":"fa6a64da-14dd-482b-aeb2-da6f872628e3","unit_id":"u2","at":1789636303.9017503},{"kind":"extract_interview","operation_id":"bea815cc-9eba-43b6-a2e3-bce6db1d54a7","unit_id":"","at":1789636326.2407682},{"kind":"propose_learning_map","operation_id":"437ac8b7-2950-41d0-bc24-acfba54d4d4b","unit_id":"","at":1789636329.5873463},{"kind":"materialize_unit","operation_id":"2f9fbf33-7496-4d68-8c01-d5c4c374e174","unit_id":"u1","at":1789636331.5567138},{"kind":"materialize_unit","operation_id":"2626eafe-3966-40ea-b55a-3aa2ea1a4354","unit_id":"u2","at":1789636332.1132684}]
+
+[[ATTACHMENT|videos/course-generation-journey--d0ac3-ion-and-completion-A15-A17--chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="course-generation-recovery.spec.ts" timestamp="2026-09-17T09:09:52.297Z" hostname="chromium" tests="5" failures="0" skipped="0" time="72.198" errors="0">
+<testcase name="capabilities read failure: library notice, wizard guidance, library intact" classname="course-generation-recovery.spec.ts" time="3.149">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/course-generation-recovery-96921-ard-guidance-library-intact-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="provider transport failure mid-creation: interrupted guidance, resume, library intact" classname="course-generation-recovery.spec.ts" time="17.801">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/course-generation-recovery-ceb88-dance-resume-library-intact-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="interrupted mid-flight: completed checkpoints are not regenerated" classname="course-generation-recovery.spec.ts" time="14.819">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/course-generation-recovery-7052d-kpoints-are-not-regenerated-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="two tabs: stale plan confirmation gets 409, fresh plan needs new consent" classname="course-generation-recovery.spec.ts" time="21.027">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/course-generation-recovery-517cd-resh-plan-needs-new-consent-chromium/video.webm]]
+
+[[ATTACHMENT|videos/course-generation-recovery-517cd-resh-plan-needs-new-consent-chromium/video-1.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="failed publication: retry_publication republishes without regeneration" classname="course-generation-recovery.spec.ts" time="15.402">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/course-generation-recovery-262ae-lishes-without-regeneration-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="learner-journey.spec.ts" timestamp="2026-09-17T09:09:52.297Z" hostname="chromium" tests="2" failures="0" skipped="0" time="21.545" errors="0">
+<testcase name="select, learn theory, practice, check and advance a course" classname="learner-journey.spec.ts" time="12.069">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/learner-journey-select-lea-b6d13--check-and-advance-a-course-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="mixed unit serves theory, quiz and code tabs in one workspace" classname="learner-journey.spec.ts" time="9.476">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/learner-journey-mixed-unit-5c837--code-tabs-in-one-workspace-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="mentor.spec.ts" timestamp="2026-09-17T09:09:52.297Z" hostname="chromium" tests="14" failures="0" skipped="0" time="176.193" errors="0">
+<testcase name="new unit selects Rubric and keeps Mentor descendants hidden" classname="mentor.spec.ts" time="6.196">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-new-unit-selects-Ru-6aba9-s-Mentor-descendants-hidden-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Mentor tab shows History, New chat, context chips and composer" classname="mentor.spec.ts" time="9.84">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-Mentor-tab-shows-Hi-5ac6a--context-chips-and-composer-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="New chat persists a durable thread that History can restore after reload" classname="mentor.spec.ts" time="19.666">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-New-chat-persists-a-85405-ry-can-restore-after-reload-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="context chips follow the workspace Theory, Quiz and Practice tabs" classname="mentor.spec.ts" time="6.455">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-context-chips-follo-2e3a9-eory-Quiz-and-Practice-tabs-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="cold transfer keeps Rubric selected and removes Mentor affordances" classname="mentor.spec.ts" time="5.643">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-cold-transfer-keeps-18520--removes-Mentor-affordances-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="pending human review suppresses Check and Next while Mentor stays available" classname="mentor.spec.ts" time="9.821">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-pending-human-revie-75fd2-hile-Mentor-stays-available-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="axe-core: Mentor tab and History dialog have zero accessibility violations" classname="mentor.spec.ts" time="10.925">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/video.webm]]
+
+[[ATTACHMENT|videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/video-1.webm]]
+
+[[ATTACHMENT|videos/mentor-axe-core-Mentor-tab-59291-ro-accessibility-violations-chromium/video-2.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="compact viewport keeps exactly three global choices and 44px Support targets" classname="mentor.spec.ts" time="10.022">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-compact-viewport-ke-aa68b-es-and-44px-Support-targets-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="narrow viewport History is a labelled drawer that closes on Escape" classname="mentor.spec.ts" time="9.256">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-narrow-viewport-His-d77e0-rawer-that-closes-on-Escape-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="send posts the help turn, streams the fake provider reply and marks it Saved" classname="mentor.spec.ts" time="10.52">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-send-posts-the-help-06395-er-reply-and-marks-it-Saved-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="New chat double activation creates at most one additional thread" classname="mentor.spec.ts" time="10.076">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-New-chat-double-act-4495d--most-one-additional-thread-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="practice answer turns stale after the workspace revision changes and a reload" classname="mentor.spec.ts" time="36.206">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-practice-answer-tur-09d49-vision-changes-and-a-reload-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="provider failure keeps the composer usable and a later send can succeed" classname="mentor.spec.ts" time="11.604">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-provider-failure-ke-7877a-nd-a-later-send-can-succeed-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="reload keeps the in-flight help operation identity for reconnect" classname="mentor.spec.ts" time="19.963">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/mentor-reload-keeps-the-in-f0dd3-tion-identity-for-reconnect-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="responsive-matrix.spec.ts" timestamp="2026-09-17T09:09:52.297Z" hostname="chromium" tests="4" failures="0" skipped="0" time="73.057" errors="0">
+<testcase name="wide viewport (1440x900) › library and workspace fit without overflow and keep 44px targets" classname="responsive-matrix.spec.ts" time="23.964">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/responsive-matrix-wide-vie-864bc-rflow-and-keep-44px-targets-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="compact viewport (1024x768) › library and workspace fit without overflow and keep 44px targets" classname="responsive-matrix.spec.ts" time="23.474">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/responsive-matrix-compact--3dcbe-rflow-and-keep-44px-targets-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="narrow viewport (375x667) › library and workspace fit without overflow and keep 44px targets" classname="responsive-matrix.spec.ts" time="21.428">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/responsive-matrix-narrow-v-8b822-rflow-and-keep-44px-targets-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="narrow viewport: trust modal fits within screen bounds and dismisses on Escape" classname="responsive-matrix.spec.ts" time="4.191">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/responsive-matrix-narrow-v-b7bda-nds-and-dismisses-on-Escape-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.ts" timestamp="2026-09-17T09:09:52.297Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.694" errors="0">
+<testcase name="renders the learner SPA shell at /app/" classname="smoke.spec.ts" time="0.694">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/smoke-renders-the-learner-SPA-shell-at-app--chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
