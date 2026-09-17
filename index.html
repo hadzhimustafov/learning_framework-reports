@@ -99,6 +99,11 @@
       return date.toLocaleString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
     }
 
+    function runLabel(run) {
+      const number = String(run.run_number || "").replace(/^#/, "");
+      return number ? "#" + number : String(run.id || "");
+    }
+
     function latestLinks(run) {
       const jobs = run.jobs || [];
       const items = jobs.map((job) => `
@@ -109,7 +114,7 @@
         </a>`).join("");
       const github = run.github_url
         ? `<a class="launch-link" href="${escapeHtml(run.github_url)}" target="_blank" rel="noreferrer">
-            <span><strong>GitHub run</strong><small>${escapeHtml(run.id)}</small></span>
+            <span><strong>GitHub run</strong><small>${escapeHtml(runLabel(run))}</small></span>
             <span class="arrow">↗</span>
           </a>`
         : "";
@@ -143,7 +148,7 @@
         return `
           <a class="launch-link" href="${escapeHtml(run.url)}">
             <span>
-              <strong>Run <span>${escapeHtml(run.id)}</span></strong>
+              <strong>Run <span>${escapeHtml(runLabel(run))}</span></strong>
               <small>${escapeHtml(run.ref || run.event || "")} · ${escapeHtml(formatDate(run.created_at))}</small>
             </span>
             ${chip(run.conclusion)}
@@ -169,13 +174,13 @@
         cards.innerHTML = "";
         return;
       }
-      const title = latest.pr_number ? `PR-${latest.pr_number}` : `Run ${latest.id}`;
+      const title = runLabel(latest);
       latestLabel.innerHTML = `<span>${escapeHtml(title)}</span> / CI`;
       latestDate.textContent = formatDate(latest.created_at);
       latestLinksBox.innerHTML = latestLinks(latest);
       navLatest.href = latest.url;
       heroLatest.href = latest.url;
-      metricRun.textContent = latest.pr_number ? `PR-${latest.pr_number}` : latest.id;
+      metricRun.textContent = title;
       cards.innerHTML = jobCards(latest);
     }
 
