@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Framework · Assets</title>
+  <meta name="description" content="Learning Framework CI report">
+  <link rel="stylesheet" href="https://hadzhimustafov.github.io/learning_framework-reports/reports-shell.css">
+  <link rel="stylesheet" href="./reports-shell.css">
+</head>
+<body class="run-page">
+  <nav class="nav" aria-label="Основная навигация">
+    <a class="brand" href="https://hadzhimustafov.github.io/learning_framework-reports/" aria-label="На главную">
+      <span class="mark"></span><span>Learning Framework</span>
+    </a>
+    <div class="links">
+      <a class="link home" href="https://hadzhimustafov.github.io/learning_framework-reports/">⌂ Home</a>
+      <a class="link" href="../">Этот запуск</a><a class="link" href="https://github.com/hadzhimustafov/learning_framework/actions/runs/35493192972" target="_blank" rel="noreferrer">GitHub</a>
+      <span class="status status-fail">Assets · failure</span>
+    </div>
+  </nav>
+  <div class="page-body">
+    <section class="hero"><div class="kicker">CI job</div><h1>Assets</h1><p class="lead">packaging tests and provenance guard</p><span class="status status-fail">failure</span><p class="note">The provenance guard has no HTML report. Packaging pytest JUnit is listed when the verify step produced it.</p></section><section><div class="head"><h2>Steps</h2><p>Outcomes recorded by the workflow job</p></div><div class="launch-list"><div class="launch-link"><span><strong>verify</strong><small>CI step</small></span><span class="status status-fail">failure</span></div><div class="launch-link"><span><strong>provenance</strong><small>CI step</small></span><span class="status status-skip">skipped</span></div></div></section><section><h2>assets.xml</h2><div class="summary"><div class="metric"><strong>8</strong><span>Tests</span></div><div class="metric"><strong>7</strong><span>Passed</span></div><div class="metric"><strong>1</strong><span>Failed</span></div><div class="metric"><strong>0</strong><span>Skipped</span></div></div><div class="test-list" id="junit-assets"><div class="test-toolbar" role="radiogroup" aria-label="Filter tests"><label class="test-chip"><input type="radio" name="junit-filter-assets" value="all" checked> All 8</label><label class="test-chip"><input type="radio" name="junit-filter-assets" value="passed"> Passed 7</label><label class="test-chip"><input type="radio" name="junit-filter-assets" value="failed"> Failed 1</label><label class="test-chip"><input type="radio" name="junit-filter-assets" value="skipped"> Skipped 0</label></div><section class="test-file" data-has="failed passed"><h3>tests.test_learner_packaging</h3><article class="test-row" data-status="passed"><div class="test-head"><span class="test-mark test-mark-passed" aria-hidden="true"></span><span class="test-name">test_packaged_spa_assets_exist</span><span class="test-time">0.0ms</span><span class="test-status">passed</span></div></article><article class="test-row" data-status="failed"><details><summary><div class="test-head"><span class="test-mark test-mark-failed" aria-hidden="true"></span><span class="test-name">test_asset_provenance_matches_working_tree</span><span class="test-time">17ms</span><span class="test-status">failed</span></div></summary><pre class="fail-text">AssertionError: assert &#x27;12b04f88c7c3...b7001fa236d9c&#x27; == &#x27;3df4ceea1f5d...eee88fda39022&#x27;
+  
+  - 3df4ceea1f5d40f2292e1cc9c56d1dccba0b4ba351440f05fc3eee88fda39022
+  + 12b04f88c7c345cfa9c394b7ca363541a8d93906fb22259e327b7001fa236d9c
+def test_asset_provenance_matches_working_tree() -&gt; None:
+        &quot;&quot;&quot;The provenance file reproduces exactly from the live source tree and lockfile.&quot;&quot;&quot;
+        provenance = _provenance()
+    
+        assert provenance[&quot;schema_version&quot;] == PROVENANCE_SCHEMA_VERSION
+        pinned_node = (ROOT / &quot;.node-version&quot;).read_text(encoding=&quot;utf-8&quot;).strip()
+        assert provenance[&quot;node_version&quot;] == pinned_node
+&gt;       assert provenance[&quot;source_tree_hash&quot;] == compute_source_tree_hash(WEB_LEARNER_DIR)
+E       AssertionError: assert &#x27;12b04f88c7c3...b7001fa236d9c&#x27; == &#x27;3df4ceea1f5d...eee88fda39022&#x27;
+E         
+E         - 3df4ceea1f5d40f2292e1cc9c56d1dccba0b4ba351440f05fc3eee88fda39022
+E         + 12b04f88c7c345cfa9c394b7ca363541a8d93906fb22259e327b7001fa236d9c
+
+tests/test_learner_packaging.py:61: AssertionError</pre></details></article><article class="test-row" data-status="passed"><div class="test-head"><span class="test-mark test-mark-passed" aria-hidden="true"></span><span class="test-name">test_index_html_contains_no_inline_scripts_or_styles</span><span class="test-time">0.0ms</span><span class="test-status">passed</span></div></article><article class="test-row" data-status="passed"><div class="test-head"><span class="test-mark test-mark-passed" aria-hidden="true"></span><span class="test-name">test_csp_allows_only_codemirror_inline_styles</span><span class="test-time">0.0ms</span><span class="test-status">passed</span></div></article><article class="test-row" data-status="passed"><div class="test-head"><span class="test-mark test-mark-passed" aria-hidden="true"></span><span class="test-name">test_spa_static_serving_and_history_fallback</span><span class="test-time">203ms</span><span class="test-status">passed</span></div></article><article class="test-row" data-status="passed"><div class="test-head"><span class="test-mark test-mark-passed" aria-hidden="true"></span><span class="test-name">test_asset_traversal_paths_are_rejected</span><span class="test-time">99ms</span><span class="test-status">passed</span></div></article><article class="test-row" data-status="passed"><div class="test-head"><span class="test-mark test-mark-passed" aria-hidden="true"></span><span class="test-name">test_app_build_matches_committed_provenance</span><span class="test-time">5.0ms</span><span class="test-status">passed</span></div></article><article class="test-row" data-status="passed"><div class="test-head"><span class="test-mark test-mark-passed" aria-hidden="true"></span><span class="test-name">test_wheel_build_contains_static_learner_assets</span><span class="test-time">674ms</span><span class="test-status">passed</span></div></article></section></div></section>
+  </div>
+</body>
+</html>
