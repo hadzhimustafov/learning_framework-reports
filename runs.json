@@ -1,6 +1,49 @@
 {
-  "updated_at": "2026-09-20T06:13:28Z",
+  "updated_at": "2026-09-20T06:29:08Z",
   "runs": [
+    {
+      "id": "35493828312",
+      "created_at": "2026-09-20T06:29:08Z",
+      "event": "pull_request",
+      "ref": "fix/ci-frontend-profile-tests",
+      "sha": "423a589b2d78e7a7448b8260c4edf081a9804981",
+      "url": "./Run/35493828312/",
+      "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/35493828312",
+      "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/21",
+      "pr_number": "21",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "id": "checks",
+          "name": "Checks",
+          "conclusion": "failure",
+          "url": "./Run/35493828312/checks/",
+          "has_report": true
+        },
+        {
+          "id": "frontend",
+          "name": "Frontend",
+          "conclusion": "success",
+          "url": "./Run/35493828312/frontend/",
+          "has_report": true
+        },
+        {
+          "id": "assets",
+          "name": "Assets",
+          "conclusion": "success",
+          "url": "./Run/35493828312/assets/",
+          "has_report": true
+        },
+        {
+          "id": "e2e",
+          "name": "E2E",
+          "conclusion": "success",
+          "url": "./Run/35493828312/e2e/",
+          "has_report": true
+        }
+      ],
+      "run_number": "123"
+    },
     {
       "id": "35493192972",
       "created_at": "2026-09-20T06:13:28Z",
