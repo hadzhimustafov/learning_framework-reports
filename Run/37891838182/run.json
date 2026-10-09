@@ -1,0 +1,43 @@
+{
+  "id": "37891838182",
+  "created_at": "2026-10-09T06:31:19Z",
+  "event": "pull_request",
+  "ref": "ci/trim-playwright-artifacts",
+  "sha": "bd9d5886a321021102eae7346e37bacccf9caf8b",
+  "url": "./Run/37891838182/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/37891838182",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/35",
+  "pr_number": "35",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "failure",
+      "url": "./Run/37891838182/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "failure",
+      "url": "./Run/37891838182/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "failure",
+      "url": "./Run/37891838182/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "failure",
+      "url": "./Run/37891838182/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "198"
+}
