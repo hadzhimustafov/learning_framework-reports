@@ -1,0 +1,43 @@
+{
+  "id": "37765778948",
+  "created_at": "2026-10-08T11:06:13Z",
+  "event": "pull_request",
+  "ref": "feature/lf-235-cursor-agent-sdk",
+  "sha": "a81c1516f777adaeb27fd760b0f76ed13b2846f6",
+  "url": "./Run/37765778948/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/37765778948",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/30",
+  "pr_number": "30",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/37765778948/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/37765778948/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/37765778948/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/37765778948/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "189"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "35505097717",
+  "created_at": "2026-09-20T10:38:33Z",
+  "event": "pull_request",
+  "ref": "chore/codex-agent-migration",
+  "sha": "005af1873fbfa91cf50d1e8f9fe68fc292e340aa",
+  "url": "./Run/35505097717/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/35505097717",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/22",
+  "pr_number": "22",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/35505097717/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/35505097717/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/35505097717/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/35505097717/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "125"
+}

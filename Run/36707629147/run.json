@@ -1,0 +1,43 @@
+{
+  "id": "36707629147",
+  "created_at": "2026-09-30T11:31:52Z",
+  "event": "pull_request",
+  "ref": "epic/25-CreateCourse",
+  "sha": "f6a53ee715d0f7f7ffd370d18549eed1942e6b6d",
+  "url": "./Run/36707629147/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/36707629147",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/24",
+  "pr_number": "24",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/36707629147/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/36707629147/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/36707629147/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "failure",
+      "url": "./Run/36707629147/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "146"
+}

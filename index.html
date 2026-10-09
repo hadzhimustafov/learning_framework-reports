@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Framework · Reports</title>
+  <meta name="description" content="Навигационный центр отчётов Learning Framework">
+  <link rel="stylesheet" href="./reports-shell.css">
+</head>
+<body id="home">
+  <div class="shell">
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="brand" href="#home" aria-label="На главную"><span class="mark"></span><span>Learning Framework</span></a>
+      <div class="links">
+        <a class="link home" href="#home">⌂ Home</a>
+        <a class="link" id="nav-latest" href="#runs">Последний запуск</a>
+        <a class="link" href="#runs">Все запуски</a>
+        <span class="status"><i></i> Pages online</span>
+      </div>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="grid">
+          <div>
+            <div class="kicker">Quality cockpit · live evidence</div>
+            <h1><span class="gradient">Reports</span><br>that tell<br>the story.</h1>
+            <p class="lead">Единая точка входа в результаты CI Learning Framework. Каждый GitHub Actions run публикует папку <code>Run/{id}/</code> со всеми job-отчётами, не затирая предыдущие запуски.</p>
+            <div class="actions">
+              <a class="button primary" id="hero-latest" href="#runs">Открыть последний запуск <span>↗</span></a>
+              <a class="button ghost" href="https://github.com/hadzhimustafov/learning_framework-reports" target="_blank" rel="noreferrer">Репозиторий <span>↗</span></a>
+            </div>
+          </div>
+          <aside class="launch" id="latest" aria-live="polite">
+            <div class="launch-top">
+              <div>
+                <div class="label">Последний запуск</div>
+                <div class="run" id="latest-run-label">Загрузка…</div>
+              </div>
+              <div class="date" id="latest-date"></div>
+            </div>
+            <div class="divider"></div>
+            <div class="launch-list" id="latest-links"></div>
+          </aside>
+        </div>
+      </section>
+      <section id="reports">
+        <div class="head">
+          <h2>Слои последнего запуска</h2>
+          <p>Checks, frontend, assets и Playwright — как только они есть в манифесте</p>
+        </div>
+        <div class="cards" id="job-cards"></div>
+      </section>
+      <section id="runs">
+        <div class="head">
+          <h2>Все запуски</h2>
+          <p>Манифест <code>runs.json</code> обновляет CI. Старые копии <code>e2e/pr-*</code> остаются на диске.</p>
+        </div>
+        <div class="runs-list" id="runs-list"></div>
+      </section>
+      <section class="summary">
+        <div class="metric"><strong id="metric-run">—</strong><span>Последний опубликованный запуск</span></div>
+        <div class="metric"><strong>gh-pages</strong><span>Источник этой страницы</span></div>
+        <div class="metric"><strong>Online</strong><span>GitHub Pages deployment</span></div>
+      </section>
+    </main>
+    <footer>
+      <span>Learning Framework Reports · evidence made easy</span>
+      <span>Нажмите <kbd>Home</kbd>, чтобы вернуться наверх</span>
+    </footer>
+  </div>
+  <script>
+    const ICONS = { checks: "▣", frontend: "◈", assets: "⌘", e2e: "⌁" };
+    const TITLES = { checks: "Checks", frontend: "Frontend", assets: "Assets", e2e: "E2E" };
+    const BLURBS = {
+      checks: "pytest и статусы lint / typecheck / validate / architecture / docs",
+      frontend: "Vitest, ESLint и TypeScript",
+      assets: "packaging tests и provenance guard",
+      e2e: "Playwright HTML, trace и видео"
+    };
+
+    function chip(state) {
+      const kind = (state || "skipped").toLowerCase();
+      let extra = " status-skip";
+      if (kind === "success" || kind === "passed") extra = "";
+      else if (kind === "failure" || kind === "cancelled" || kind === "timed_out") extra = " status-fail";
+      return `<span class="status${extra}">${escapeHtml(kind)}</span>`;
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (ch) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[ch]));
+    }
+
+    function formatDate(iso) {
+      if (!iso) return "";
+      const date = new Date(iso);
+      if (Number.isNaN(date.getTime())) return iso;
+      return date.toLocaleString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+    }
+
+    function runLabel(run) {
+      const number = String(run.run_number || "").replace(/^#/, "");
+      return number ? "#" + number : String(run.id || "");
+    }
+
+    function latestLinks(run) {
+      const jobs = run.jobs || [];
+      const items = jobs.map((job) => `
+        <a class="launch-link" href="${escapeHtml(job.url || run.url)}">
+          <span><strong>${escapeHtml(job.name || TITLES[job.id] || job.id)}</strong>
+          <small>${escapeHtml(job.conclusion || "")}</small></span>
+          <span class="arrow">→</span>
+        </a>`).join("");
+      const github = run.github_url
+        ? `<a class="launch-link" href="${escapeHtml(run.github_url)}" target="_blank" rel="noreferrer">
+            <span><strong>GitHub run</strong><small>${escapeHtml(runLabel(run))}</small></span>
+            <span class="arrow">↗</span>
+          </a>`
+        : "";
+      return items + github;
+    }
+
+    function jobCards(run) {
+      return (run.jobs || []).map((job) => `
+        <a class="card" href="${escapeHtml(job.url || run.url)}">
+          <div class="icon">${ICONS[job.id] || "●"}</div>
+          <h3>${escapeHtml(job.name || TITLES[job.id] || job.id)}</h3>
+          <p>${escapeHtml(BLURBS[job.id] || "Отчёт job этого запуска")}</p>
+          <div class="card-foot">${escapeHtml(job.conclusion || "open")} →</div>
+        </a>`).join("");
+    }
+
+    function runsList(runs) {
+      if (!runs.length) {
+        return '<p class="note">Пока нет опубликованных <code>Run/{id}/</code>. После следующего CI манифест появится здесь.</p>';
+      }
+      return runs.map((run) => {
+        const jobs = (run.jobs || []).map((job) => `
+          <a class="link" href="${escapeHtml(job.url || run.url)}">${escapeHtml(job.name || job.id)}</a>
+        `).join("");
+        const pr = run.pr_url
+          ? `<a class="link" href="${escapeHtml(run.pr_url)}" target="_blank" rel="noreferrer">PR #${escapeHtml(run.pr_number || "")}</a>`
+          : "";
+        const github = run.github_url
+          ? `<a class="link" href="${escapeHtml(run.github_url)}" target="_blank" rel="noreferrer">GitHub</a>`
+          : "";
+        return `
+          <a class="launch-link" href="${escapeHtml(run.url)}">
+            <span>
+              <strong>Run <span>${escapeHtml(runLabel(run))}</span></strong>
+              <small>${escapeHtml(run.ref || run.event || "")} · ${escapeHtml(formatDate(run.created_at))}</small>
+            </span>
+            ${chip(run.conclusion)}
+          </a>
+          <div class="job-chips">${jobs}${pr}${github}</div>`;
+      }).join("");
+    }
+
+    function paint(runs) {
+      const latest = runs[0];
+      const latestLabel = document.getElementById("latest-run-label");
+      const latestDate = document.getElementById("latest-date");
+      const latestLinksBox = document.getElementById("latest-links");
+      const navLatest = document.getElementById("nav-latest");
+      const heroLatest = document.getElementById("hero-latest");
+      const metricRun = document.getElementById("metric-run");
+      const cards = document.getElementById("job-cards");
+      const list = document.getElementById("runs-list");
+      list.innerHTML = runsList(runs);
+      if (!latest) {
+        latestLabel.textContent = "Нет запусков";
+        latestLinksBox.innerHTML = '<p class="note">CI ещё не опубликовал runs.json.</p>';
+        cards.innerHTML = "";
+        return;
+      }
+      const title = runLabel(latest);
+      latestLabel.innerHTML = `<span>${escapeHtml(title)}</span> / CI`;
+      latestDate.textContent = formatDate(latest.created_at);
+      latestLinksBox.innerHTML = latestLinks(latest);
+      navLatest.href = latest.url;
+      heroLatest.href = latest.url;
+      metricRun.textContent = title;
+      cards.innerHTML = jobCards(latest);
+    }
+
+    fetch("./runs.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("missing runs.json");
+        return res.json();
+      })
+      .then((data) => paint(Array.isArray(data.runs) ? data.runs : []))
+      .catch(() => paint([]));
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key.toLowerCase() === "home" && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+        event.preventDefault();
+        location.hash = "home";
+      }
+    });
+  </script>
+</body>
+</html>

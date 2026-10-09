@@ -1,0 +1,43 @@
+{
+  "id": "37188909788",
+  "created_at": "2026-10-04T08:44:33Z",
+  "event": "pull_request",
+  "ref": "docs/minimal-doc-set-cleanup",
+  "sha": "c0b00efa58f21313dedfb77940ca56e4bc57749c",
+  "url": "./Run/37188909788/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/37188909788",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/28",
+  "pr_number": "28",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/37188909788/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/37188909788/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/37188909788/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/37188909788/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "172"
+}

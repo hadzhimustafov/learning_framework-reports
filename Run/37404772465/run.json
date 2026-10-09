@@ -1,0 +1,43 @@
+{
+  "id": "37404772465",
+  "created_at": "2026-10-06T02:54:28Z",
+  "event": "pull_request",
+  "ref": "feature/epic-30-teaching-core",
+  "sha": "c0b714e11fab019684cffc6181a5bc3876a5cabf",
+  "url": "./Run/37404772465/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/37404772465",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/29",
+  "pr_number": "29",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/37404772465/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/37404772465/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/37404772465/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/37404772465/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "174"
+}

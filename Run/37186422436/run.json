@@ -1,0 +1,43 @@
+{
+  "id": "37186422436",
+  "created_at": "2026-10-04T07:54:48Z",
+  "event": "pull_request",
+  "ref": "docs/learner-ui-style-migration",
+  "sha": "11192db12b1e04fbddfe2edb01a67ad95a396410",
+  "url": "./Run/37186422436/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/37186422436",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/27",
+  "pr_number": "27",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/37186422436/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/37186422436/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/37186422436/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/37186422436/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "170"
+}

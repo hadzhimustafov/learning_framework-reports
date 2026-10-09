@@ -1,0 +1,43 @@
+{
+  "id": "36964077130",
+  "created_at": "2026-10-02T04:33:36Z",
+  "event": "pull_request",
+  "ref": "epic/28-CourseProviderManagement",
+  "sha": "26e84c7695016d72184c799e013876527cdd19bb",
+  "url": "./Run/36964077130/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/36964077130",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/25",
+  "pr_number": "25",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/36964077130/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "failure",
+      "url": "./Run/36964077130/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/36964077130/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/36964077130/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "153"
+}
