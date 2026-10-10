@@ -1,0 +1,43 @@
+{
+  "id": "38038870043",
+  "created_at": "2026-10-10T09:02:10Z",
+  "event": "pull_request",
+  "ref": "feature/lf-262-codex-sdk",
+  "sha": "e8839f96606d7971c941af821df1ff77f9d63e6a",
+  "url": "./Run/38038870043/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/38038870043",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/37",
+  "pr_number": "37",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "failure",
+      "url": "./Run/38038870043/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "failure",
+      "url": "./Run/38038870043/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "failure",
+      "url": "./Run/38038870043/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "failure",
+      "url": "./Run/38038870043/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "205"
+}
