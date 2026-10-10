@@ -1,0 +1,43 @@
+{
+  "id": "38054318060",
+  "created_at": "2026-10-10T13:28:42Z",
+  "event": "pull_request",
+  "ref": "feature/epic-29-hierarchy",
+  "sha": "24ddc9594102af41f1593edfcdb5c5d2a76c609c",
+  "url": "./Run/38054318060/",
+  "github_url": "https://github.com/hadzhimustafov/learning_framework/actions/runs/38054318060",
+  "pr_url": "https://github.com/hadzhimustafov/learning_framework/pull/38",
+  "pr_number": "38",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "failure",
+      "url": "./Run/38054318060/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "failure",
+      "url": "./Run/38054318060/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "failure",
+      "url": "./Run/38054318060/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "failure",
+      "url": "./Run/38054318060/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "208"
+}
