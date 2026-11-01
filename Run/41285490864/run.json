@@ -1,0 +1,43 @@
+{
+  "id": "41285490864",
+  "created_at": "2026-11-01T08:28:35Z",
+  "event": "pull_request",
+  "ref": "feature/ci-green",
+  "sha": "e10ac40254362ae49b134d80899348b18796d841",
+  "url": "./Run/41285490864/",
+  "github_url": "https://github.com/SoftLX/learning_framework/actions/runs/41285490864",
+  "pr_url": "https://github.com/SoftLX/learning_framework/pull/130",
+  "pr_number": "130",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "failure",
+      "url": "./Run/41285490864/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/41285490864/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/41285490864/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/41285490864/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "233"
+}
