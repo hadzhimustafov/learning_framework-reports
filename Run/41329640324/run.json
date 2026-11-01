@@ -1,0 +1,43 @@
+{
+  "id": "41329640324",
+  "created_at": "2026-11-01T17:25:42Z",
+  "event": "push",
+  "ref": "Develop",
+  "sha": "0ec38a320d1d2ea5da13acf9e02bbc3b09e568a9",
+  "url": "./Run/41329640324/",
+  "github_url": "https://github.com/SoftLX/learning_framework/actions/runs/41329640324",
+  "pr_url": "",
+  "pr_number": null,
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/41329640324/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/41329640324/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/41329640324/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "skipped",
+      "url": "./Run/41329640324/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "243"
+}
