@@ -1,0 +1,277 @@
+<testsuites id="" name="" tests="72" failures="2" skipped="0" errors="0" time="381.29957">
+<testsuite name="author-journey.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="2" failures="0" skipped="0" time="90.006" errors="0">
+<testcase name="author on the fake provider, en › creates a course through the four gates and enrolls in it" classname="author-journey.spec.ts" time="46.282">
+</testcase>
+<testcase name="author on the fake provider, ru › creates a course through the four gates and enrolls in it" classname="author-journey.spec.ts" time="43.724">
+</testcase>
+</testsuite>
+<testsuite name="editor-locale.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="4" failures="0" skipped="0" time="19.064" errors="0">
+<testcase name="Russian interface › loads the Russian language pack of the workbench" classname="editor-locale.spec.ts" time="4.509">
+</testcase>
+<testcase name="English interface › loads the workbench in English" classname="editor-locale.spec.ts" time="3.928">
+</testcase>
+<testcase name="English interface › asks for a reload after the interface language changes, and the reload applies it" classname="editor-locale.spec.ts" time="9.348">
+</testcase>
+<testcase name="narrow screen › shows a stub instead of the workbench below 1024 px" classname="editor-locale.spec.ts" time="1.279">
+</testcase>
+</testsuite>
+<testsuite name="editor-lsp.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="4" failures="0" skipped="0" time="20.466" errors="0">
+<testcase name="shows diagnostics, hover and completion from the language server" classname="editor-lsp.spec.ts" time="5.863">
+</testcase>
+<testcase name="stops the language server when the learner leaves the practice" classname="editor-lsp.spec.ts" time="4.993">
+</testcase>
+<testcase name="tells the learner when the server refuses the session and offers no retry" classname="editor-lsp.spec.ts" time="4.586">
+</testcase>
+<testcase name="offers another try when the server is busy" classname="editor-lsp.spec.ts" time="5.024">
+</testcase>
+</testsuite>
+<testsuite name="editor-save-before-check.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="3" failures="0" skipped="0" time="12.916" errors="0">
+<testcase name="saves what was just typed before the attempt is sent, even when the disk is slow" classname="editor-save-before-check.spec.ts" time="6.25">
+</testcase>
+<testcase name="sends no attempt and says so when the work cannot be saved" classname="editor-save-before-check.spec.ts" time="5.282">
+</testcase>
+<testcase name="keeps the unit checkable without an editor (narrow window)" classname="editor-save-before-check.spec.ts" time="1.384">
+</testcase>
+</testsuite>
+<testsuite name="editor.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="9" failures="2" skipped="0" time="64.076" errors="0">
+<testcase name="mounts the workbench in the practice slot and opens the starter file" classname="editor.spec.ts" time="4.571">
+</testcase>
+<testcase name="explorer, tabs, quick open and search work over the working folder" classname="editor.spec.ts" time="5.875">
+</testcase>
+<testcase name="saves an edit of the starter file to the working folder, with Ctrl+S and when focus leaves the editor" classname="editor.spec.ts" time="5.449">
+</testcase>
+<testcase name="shows a change made outside the editor, in the open file and in the explorer" classname="editor.spec.ts" time="5.266">
+</testcase>
+<testcase name="keeps a course fixture read-only" classname="editor.spec.ts" time="19.788">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/editor-keeps-a-course-fixture-read-only-chromium/video.webm]]
+
+[[ATTACHMENT|videos/editor-keeps-a-course-fixture-read-only-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/editor-keeps-a-course-fixture-read-only-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › editor.spec.ts:92:1 › keeps a course fixture read-only ──────────────────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.quick-input-list .monaco-list-row').filter({ hasText: 'domain.py' }).first()
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for locator('.quick-input-list .monaco-list-row').filter({ hasText: 'domain.py' }).first()
+
+
+       95 |   await page.locator('.quick-input-widget input').waitFor();
+       96 |   await page.keyboard.type('domain.py');
+    >  97 |   await expect(page.locator('.quick-input-list .monaco-list-row', { hasText: 'domain.py' }).first()).toBeVisible({ timeout: 15_000 });
+          |                                                                                                      ^
+       98 |   await page.keyboard.press('Enter');
+       99 |   await page.locator('.editor-group-container.active .monaco-editor .view-lines').first().click();
+      100 |   await page.keyboard.press('Control+End');
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/editor.spec.ts:97:102
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/editor-keeps-a-course-fixture-read-only-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/editor-keeps-a-course-fixture-read-only-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/editor-keeps-a-course-fixture-read-only-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/editor-keeps-a-course-fixture-read-only-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="follows the colour scheme without a reload" classname="editor.spec.ts" time="6.096">
+</testcase>
+<testcase name="offers no terminal, extensions, accounts, sync, upload or download" classname="editor.spec.ts" time="6.261">
+</testcase>
+<testcase name="keeps no learner state in browser storage" classname="editor.spec.ts" time="5.394">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|videos/editor-keeps-no-learner-state-in-browser-storage-chromium/video.webm]]
+
+[[ATTACHMENT|videos/editor-keeps-no-learner-state-in-browser-storage-chromium/error-context.md]]
+
+[[ATTACHMENT|videos/editor-keeps-no-learner-state-in-browser-storage-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(received).toEqual(expected) // deep equality" type="expect.toEqual">
+<![CDATA[  [chromium] › editor.spec.ts:164:1 › keeps no learner state in browser storage ────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+      Object {
+        "databases": Array [
+          "vscode-web-state-db-global-shared",
+        ],
+    -   "keys": Array [
+    -     "monaco-parts-splash",
+    -   ],
+    +   "keys": Array [],
+      }
+
+      173 |     keys: Object.keys(localStorage).filter((key) => /vscode|monaco|workbench/i.test(key)),
+      174 |   }));
+    > 175 |   expect(stored).toEqual({ databases: ['vscode-web-state-db-global-shared'], keys: ['monaco-parts-splash'] });
+          |                  ^
+      176 |   const contents = await page.evaluate(async () => {
+      177 |     const request = indexedDB.open('vscode-web-state-db-global-shared');
+      178 |     const db = await new Promise<IDBDatabase>((resolve) => (request.onsuccess = () => resolve(request.result)));
+        at /home/runner/work/learning_framework/learning_framework/web/learner/e2e/editor.spec.ts:175:18
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/videos/editor-keeps-no-learner-state-in-browser-storage-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/videos/editor-keeps-no-learner-state-in-browser-storage-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/videos/editor-keeps-no-learner-state-in-browser-storage-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/videos/editor-keeps-no-learner-state-in-browser-storage-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="runs under the page policy without violations" classname="editor.spec.ts" time="5.376">
+</testcase>
+</testsuite>
+<testsuite name="enrollment-narrow.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="6" failures="0" skipped="0" time="7.213" errors="0">
+<testcase name="course overview with the trust card has no horizontal overflow at 360px" classname="enrollment-narrow.spec.ts" time="1.16">
+</testcase>
+<testcase name="unit has no horizontal overflow at 360px" classname="enrollment-narrow.spec.ts" time="1.159">
+</testcase>
+<testcase name="milestones has no horizontal overflow at 360px" classname="enrollment-narrow.spec.ts" time="1.177">
+</testcase>
+<testcase name="unit has no horizontal overflow at 360px with a citation open" classname="enrollment-narrow.spec.ts" time="1.199">
+</testcase>
+<testcase name="every unit tab has no horizontal overflow at 360px" classname="enrollment-narrow.spec.ts" time="1.316">
+</testcase>
+<testcase name="home hero and course rows stack without horizontal overflow at 360px" classname="enrollment-narrow.spec.ts" time="1.202">
+</testcase>
+</testsuite>
+<testsuite name="language.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="2" failures="0" skipped="0" time="6.852" errors="0">
+<testcase name="switches the interface language, applies it at once and keeps it across reloads and sessions" classname="language.spec.ts" time="4.262">
+</testcase>
+<testcase name="without a saved choice the browser language decides, Russian or English" classname="language.spec.ts" time="2.59">
+</testcase>
+</testsuite>
+<testsuite name="lesson-format.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="6" failures="0" skipped="0" time="18.582" errors="0">
+<testcase name="the reference course is enrolled and its lesson unit opens" classname="lesson-format.spec.ts" time="6.343">
+</testcase>
+<testcase name="1280 px: the narrow lesson column shows chips, not margin notes" classname="lesson-format.spec.ts" time="1.701">
+</testcase>
+<testcase name="1920 px: both claims stand as notes in the margin with the quote and the source" classname="lesson-format.spec.ts" time="1.867">
+</testcase>
+<testcase name="360 px: claim markers are chips and nothing overflows" classname="lesson-format.spec.ts" time="1.416">
+</testcase>
+<testcase name="retrieval disclosure and quiz choice leave the criteria unchanged; the footer names the source and time" classname="lesson-format.spec.ts" time="4.412">
+</testcase>
+<testcase name="1440 px: the practice brief is open on the first visit and collapsed on the second" classname="lesson-format.spec.ts" time="2.843">
+</testcase>
+</testsuite>
+<testsuite name="mentor-narrow.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="6" failures="0" skipped="0" time="8.265" errors="0">
+<testcase name="the aside is a sheet opened from the dock at 360px, with no horizontal overflow" classname="mentor-narrow.spec.ts" time="1.472">
+</testcase>
+<testcase name="the contents column is a sheet opened from the dock at 360px" classname="mentor-narrow.spec.ts" time="1.303">
+</testcase>
+<testcase name="a collapsed aside gives the stage the full width at 1440px" classname="mentor-narrow.spec.ts" time="1.405">
+</testcase>
+<testcase name="the aside is a docked column at 1024px and never overlaps the stage" classname="mentor-narrow.spec.ts" time="1.32">
+</testcase>
+<testcase name="the aside is a rail plus drawer at 800px and Esc closes it" classname="mentor-narrow.spec.ts" time="1.377">
+</testcase>
+<testcase name="R folds the columns to rails at 1440px and Esc restores them" classname="mentor-narrow.spec.ts" time="1.388">
+</testcase>
+</testsuite>
+<testsuite name="provider-profiles.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="3" failures="0" skipped="0" time="12.593" errors="0">
+<testcase name="create, check, activate and delete a provider profile against the fake provider" classname="provider-profiles.spec.ts" time="8.265">
+</testcase>
+<testcase name="the active profile cannot be deleted and plain http to a remote host is rejected inline" classname="provider-profiles.spec.ts" time="2.726">
+</testcase>
+<testcase name="the profile list and form have no horizontal overflow at 400px" classname="provider-profiles.spec.ts" time="1.602">
+</testcase>
+</testsuite>
+<testsuite name="recheck-judge.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="1" failures="0" skipped="0" time="17.919" errors="0">
+<testcase name="a never-judged draft: recheck shows NOT_JUDGED, «Run evaluation» judges it" classname="recheck-judge.spec.ts" time="17.919">
+</testcase>
+</testsuite>
+<testsuite name="reference-course.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="4" failures="0" skipped="0" time="55.189" errors="0">
+<testcase name="reference-v3, en › a learner takes the course from import to the summary" classname="reference-course.spec.ts" time="24.399">
+</testcase>
+<testcase name="reference-v3, en › a new version with a new permission shows the difference and asks for consent again" classname="reference-course.spec.ts" time="2.884">
+</testcase>
+<testcase name="reference-v3, ru › a learner takes the course from import to the summary" classname="reference-course.spec.ts" time="24.418">
+</testcase>
+<testcase name="reference-v3, ru › a new version with a new permission shows the difference and asks for consent again" classname="reference-course.spec.ts" time="3.488">
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="3" failures="0" skipped="0" time="2.502" errors="0">
+<testcase name="renders the learner SPA shell at /app/" classname="smoke.spec.ts" time="0.656">
+</testcase>
+<testcase name="home has no horizontal overflow at 360px" classname="smoke.spec.ts" time="0.732">
+</testcase>
+<testcase name="import and consent has no horizontal overflow at 360px" classname="smoke.spec.ts" time="1.114">
+</testcase>
+</testsuite>
+<testsuite name="sources-library.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.987" errors="0">
+<testcase name="import a file, discover a candidate and read the coverage matrix" classname="sources-library.spec.ts" time="3.987">
+</testcase>
+</testsuite>
+<testsuite name="theme-boot.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.336" errors="0">
+<testcase name="a saved dark theme is applied before the first paint" classname="theme-boot.spec.ts" time="0.336">
+</testcase>
+</testsuite>
+<testsuite name="widths.spec.ts" timestamp="2026-11-01T08:37:11.299Z" hostname="chromium" tests="17" failures="0" skipped="0" time="21.912" errors="0">
+<testcase name="360 px › home has no horizontal overflow" classname="widths.spec.ts" time="1.083">
+</testcase>
+<testcase name="360 px › settings has no horizontal overflow" classname="widths.spec.ts" time="1.199">
+</testcase>
+<testcase name="360 px › import and consent (picker) has no horizontal overflow" classname="widths.spec.ts" time="1.116">
+</testcase>
+<testcase name="360 px › consent preview (permission groups and diff) has no horizontal overflow" classname="widths.spec.ts" time="0.746">
+</testcase>
+<testcase name="360 px › course overview has no horizontal overflow" classname="widths.spec.ts" time="0.767">
+</testcase>
+<testcase name="360 px › unit has no horizontal overflow" classname="widths.spec.ts" time="1.131">
+</testcase>
+<testcase name="360 px › mentor sheet has no horizontal overflow" classname="widths.spec.ts" time="1.221">
+</testcase>
+<testcase name="360 px › contents sheet has no horizontal overflow" classname="widths.spec.ts" time="1.214">
+</testcase>
+<testcase name="360 px › create course shows the large-screen stub, not a scrolling page" classname="widths.spec.ts" time="1.113">
+</testcase>
+<testcase name="360 px › course graph shows the large-screen stub, not a scrolling page" classname="widths.spec.ts" time="1.115">
+</testcase>
+<testcase name="360 px › journal run shows the large-screen stub, not a scrolling page" classname="widths.spec.ts" time="1.115">
+</testcase>
+<testcase name="1024 px › create course (generation) has no horizontal overflow" classname="widths.spec.ts" time="1.284">
+</testcase>
+<testcase name="1024 px › course graph has no horizontal overflow" classname="widths.spec.ts" time="0.884">
+</testcase>
+<testcase name="1024 px › generation run (units) has no horizontal overflow" classname="widths.spec.ts" time="1.254">
+</testcase>
+<testcase name="1024 px › consent preview has no horizontal overflow" classname="widths.spec.ts" time="0.932">
+</testcase>
+<testcase name="1024 px › editor (unit with a practice) has no horizontal overflow" classname="widths.spec.ts" time="4.857">
+</testcase>
+<testcase name="1024 px › run journal has no horizontal overflow" classname="widths.spec.ts" time="0.881">
+</testcase>
+</testsuite>
+</testsuites>
