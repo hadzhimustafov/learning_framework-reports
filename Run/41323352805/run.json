@@ -1,0 +1,43 @@
+{
+  "id": "41323352805",
+  "created_at": "2026-11-01T16:21:40Z",
+  "event": "pull_request",
+  "ref": "feature/test-speed",
+  "sha": "262b8403443de7868cc0434e6783748054282159",
+  "url": "./Run/41323352805/",
+  "github_url": "https://github.com/SoftLX/learning_framework/actions/runs/41323352805",
+  "pr_url": "https://github.com/SoftLX/learning_framework/pull/133",
+  "pr_number": "133",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/41323352805/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/41323352805/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/41323352805/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/41323352805/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "241"
+}
