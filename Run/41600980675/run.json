@@ -1,0 +1,43 @@
+{
+  "id": "41600980675",
+  "created_at": "2026-11-03T08:39:55Z",
+  "event": "pull_request",
+  "ref": "fix/r17-19-seatbelt-devnull",
+  "sha": "bc52e183858175d8a84ad230c69e7b3362ccdd65",
+  "url": "./Run/41600980675/",
+  "github_url": "https://github.com/SoftLX/learning_framework/actions/runs/41600980675",
+  "pr_url": "https://github.com/SoftLX/learning_framework/pull/141",
+  "pr_number": "141",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/41600980675/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "failure",
+      "url": "./Run/41600980675/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/41600980675/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/41600980675/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "272"
+}
