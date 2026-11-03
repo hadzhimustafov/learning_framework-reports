@@ -1,0 +1,43 @@
+{
+  "id": "41661962659",
+  "created_at": "2026-11-03T15:39:50Z",
+  "event": "pull_request",
+  "ref": "feat/lf-510-gate-scripts",
+  "sha": "e40c9c3fb96db29b89f7ca2c1544eabe225046e5",
+  "url": "./Run/41661962659/",
+  "github_url": "https://github.com/SoftLX/learning_framework/actions/runs/41661962659",
+  "pr_url": "https://github.com/SoftLX/learning_framework/pull/143",
+  "pr_number": "143",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/41661962659/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/41661962659/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/41661962659/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "success",
+      "url": "./Run/41661962659/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "289"
+}
