@@ -1,0 +1,43 @@
+{
+  "id": "41722254360",
+  "created_at": "2026-11-03T21:52:55Z",
+  "event": "pull_request",
+  "ref": "feat/lf-530-dry-run",
+  "sha": "9a0d27d715895bd4955aec1a64813e93c4277468",
+  "url": "./Run/41722254360/",
+  "github_url": "https://github.com/SoftLX/learning_framework/actions/runs/41722254360",
+  "pr_url": "https://github.com/SoftLX/learning_framework/pull/144",
+  "pr_number": "144",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": "checks",
+      "name": "Checks",
+      "conclusion": "success",
+      "url": "./Run/41722254360/checks/",
+      "has_report": true
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "conclusion": "success",
+      "url": "./Run/41722254360/frontend/",
+      "has_report": true
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "conclusion": "success",
+      "url": "./Run/41722254360/assets/",
+      "has_report": true
+    },
+    {
+      "id": "e2e",
+      "name": "E2E",
+      "conclusion": "failure",
+      "url": "./Run/41722254360/e2e/",
+      "has_report": true
+    }
+  ],
+  "run_number": "293"
+}
